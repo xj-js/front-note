@@ -6,7 +6,7 @@ export default {
 		nav: [{ text: 'Guide', link: '/index' }],
 		sidebar: [
 			{
-				text: 'JavaScript基础知识的简要概述',
+				text: 'js基础',
 				link: '/js-base/index',
 			}
 		],
