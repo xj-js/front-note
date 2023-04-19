@@ -1,6 +1,6 @@
 export default {
 	dest: 'public',
-	base: '/xj-js/front-note/',
+	base: '/front-note/',
 	title: '前端学习笔记',
 	themeConfig: {
 		nav: [{ text: 'Guide', link: '/index' }],
