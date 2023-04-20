@@ -1,5 +1,4 @@
 node_modules
 _book
 public
-package-lock.json
 docs/.vitepress/dist/*
