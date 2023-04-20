@@ -1,22 +1,53 @@
-JavaScript基础知识的简要概述:
+# JavaScript基础知识的简要
+> 参考
+- mdn: https://developer.mozilla.org/zh-CN/
+- 现代 JavaScript 教程: https://zh.javascript.info/
 
 ## 变量和数据类型
 
 在JavaScript中，变量声明使用`var`,`let`,或 `const`关键字。变量可以存储数字、字符串、布尔值和对象等不同类型的值。
 
-JavaScript有七种数据类型：`undefined`、“null”、“boolean”、“string”、“number”、“object”、“symbol”，通过`typeof`操作符可以查询变量的类型。
+JavaScript 中有 8 种数据类型，分为两类：
 
+1. 基本类型(primitive types)：
+- number（数字）: 整数或浮点数；
+- boolean（布尔）: true 或 false；
+- string（字符串）：表示文本；
+- null: 表示一个空指针对象，只有一个值 null；
+- undefined: 表示未定义的值，只有一个值 undefined；
+- symbol (符号): ES6新增类型,它是唯一的且不可修改的值
+- bigInt 可以表示任意大小的整数
+
+2. 引用类型(reference types)，也称为对象(object types)：
+- object（对象）：一组键值对的无序集合，比如 {name: '张三', age: 18}；
+- array（数组）：一组按照一定顺序排列的值的集合，比如 [1, 2, 3]；
+- function（函数）：具有特殊功能的对象，比如 function add(a,b){return a+b}。
+
+上述基本类型都属于值类型(value type), 即当你将基本类型赋值给一个新变量时，该变量里存储的就是该基本类型的值本身。而引用类型则可以认为是指向内存中某个对象的指针，比如当你把一个对象赋值给一个新变量时，新变量里存的就是该对象的地址指针。
+
+
+在 JavaScript 中，判断数据的类型有多种方式，下面介绍几种常用的判断方法：
+
+1. typeof 运算符：可以检测变量或表达式的数据类型
 ```javascript
-// 声明变量并赋值
-var age = 20;
-var name = "张三";
-const PI = 3.14;
+typeof 123; // "number"
+typeof "hello"; // "string"
+typeof true; // "boolean"
+typeof null; // "object" （注意这里返回的是 "object"，其实 null 是个基本类型）
+typeof undefined; // "undefined"
+typeof Symbol(); // "symbol"
 
-// 检查数据类型
-console.log(typeof age); // number
-console.log(typeof name); // string
-console.log(typeof PI); // const
+typeof {}; // "object"
+typeof []; // "object"
+typeof function(){}; // "function"
 ```
+2. instanceof 运算符：可以检测一个对象是否是另一个对象的实例。例如 `'hello' instanceof String` 返回布尔值 `false`。
+3. Object.prototype.toString.call() 方法：返回调用该方法时传入参数的数据类型，通过这种方式可以获得更为准确的类型判断结果。例如 `Object.prototype.toString.call('hello')` 返回字符串 `"[object String]"`。
+4. Array.isArray() 方法：用于判断一个对象是否为数组类型。例如 `Array.isArray([])` 返回布尔值 `true`。
+
+除此之外，还有其它一些方法可以进行类型判断，如 isNaN()、Number.isNaN() 等。
+
+需要注意的是，在使用某些运算符或函数进行类型判断时可能会产生误判或不准确的结果，因此在特定场景下应根据具体情况选择适合的判断方式。
 
 ## 运算符
 
@@ -232,8 +263,9 @@ getData().then(function(data) {
 ```
 
 ## ES6特性
-
+[阮一峰 ES6 入门教程](https://es6.ruanyifeng.com/)  
 ES6引入了许多新特性，如箭头函数、解构赋值、默认参数、Rest参数、展开运算符、迭代器、Symbol类型等。这些语法糖可以让JavaScript代码更加简洁易懂。
+
 
 ```javascript
 //箭头函数
