@@ -1,5 +1,6 @@
 # Vitepress + GitHub Actions 自动部署博客
-> 如何在github上部署个人博客，可以在github pages里设置项目页面路径，但是能否在代码提交后自动部署更新博客呢？试着用下面的介绍实现免费的一个个人博客吧！
+如何在github上部署个人博客，可以在github pages里设置项目页面路径，但是能否在代码提交后自动部署更新博客呢？试着用下面的介绍实现免费的一个个人博客吧！
+## 实现步骤
 - 1、在github上新建项目，克隆项目到本地
 - 2、使用[vitepress](https://vitepress.dev/guide/what-is-vitepress)搭建个人博客或者技术文档项目
 - 3、提交代码到github

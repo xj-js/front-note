@@ -1,15 +1,13 @@
-# JavaScript基础知识的简要
-> 参考
-- mdn: https://developer.mozilla.org/zh-CN/
-- 现代 JavaScript 教程: https://zh.javascript.info/
+# JavaScript基础
 
 ## 变量和数据类型
 
 在JavaScript中，变量声明使用`var`,`let`,或 `const`关键字。变量可以存储数字、字符串、布尔值和对象等不同类型的值。
+请记得 const 和 let 都是块级作用域，var 是函数级作用域
 
 JavaScript 中有 8 种数据类型，分为两类：
 
-1. 基本类型(primitive types)：
+1. 基本类型(primitive types)/原始类型：
 - number（数字）: 整数或浮点数；
 - boolean（布尔）: true 或 false；
 - string（字符串）：表示文本；
@@ -18,7 +16,7 @@ JavaScript 中有 8 种数据类型，分为两类：
 - symbol (符号): ES6新增类型,它是唯一的且不可修改的值
 - bigInt 可以表示任意大小的整数
 
-2. 引用类型(reference types)，也称为对象(object types)：
+2. 引用类型(reference types)，也称为对象(object types)或者复杂类型：
 - object（对象）：一组键值对的无序集合，比如 {name: '张三', age: 18}；
 - array（数组）：一组按照一定顺序排列的值的集合，比如 [1, 2, 3]；
 - function（函数）：具有特殊功能的对象，比如 function add(a,b){return a+b}。
@@ -159,6 +157,26 @@ console.log(fruits[fruits.length-1]);
 fruits.forEach(function(item, index, array) {
     console.log(item, index);
 });
+```
+- 请使用对象方法的简写方式，eslint: object-shorthand
+```js
+// bad
+const item = {
+  value: 1,
+
+  addValue: function (val) {
+    return item.value + val
+  }
+}
+
+// good
+const item = {
+  value: 1,
+
+  addValue (val) {
+    return item.value + val
+  }
+}
 ```
 
 ## 作用域和闭包
